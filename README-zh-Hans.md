@@ -1,5 +1,3 @@
-
-
 # 系统设计入门
 
 <p align="center">
