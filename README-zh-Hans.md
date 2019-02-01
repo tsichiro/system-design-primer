@@ -1665,8 +1665,6 @@ Notes
 
 ## 致谢
 
-整个仓库都提供了证书和源
-
 特别鸣谢：
 
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
@@ -1674,6 +1672,7 @@ Notes
 > * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
+整个仓库都提供了证书和源
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
 * [High scalability](http://highscalability.com/)
@@ -1689,7 +1688,7 @@ Notes
 
 欢迎联系我讨论本文的不足、问题或者意见。
 
-可以在我的 [GitHub 主页](https://github.com/donnemartin)上找到我的联系方式
+可以在我的 [GitHub 主页](https://github.com/tsichiro)上找到我的联系方式
 
 ## 许可
 
