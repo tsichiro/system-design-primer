@@ -1,5 +1,5 @@
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
-> * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
+> * 原译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
 > * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
@@ -10,19 +10,9 @@
   <br/>
 </p>
 
-## 翻译
-
-有兴趣参与[翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
-
-* [巴西葡萄牙语](https://github.com/donnemartin/system-design-primer/issues/40)
-* [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
-* [土耳其语](https://github.com/donnemartin/system-design-primer/issues/39)
-
 ## 目的
 
 > 学习如何设计大型系统。
->
-> 为系统设计的面试做准备。
 
 ### 学习如何设计大型系统
 
@@ -32,79 +22,27 @@
 
 这个仓库就是这些资源的**组织收集**，它可以帮助你学习如何构建可扩展的系统。
 
-### 从开源社区学习
+## 学习指引
 
-这是一个不断更新的开源项目的初期的版本。
+* **短期** - 以系统设计主题的**广度**为目标。
+* **中期** - 以系统设计主题的**广度**和**初级深度**为目标。
+* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。
 
-欢迎[贡献](#贡献)！
-
-### 为系统设计的面试做准备
-
-在很多科技公司中，除了代码面试，系统设计也是**技术面试过程**中的一个**必要环节**。
-
-**实践常见的系统设计面试题**并且把你的答案和**例子的解答**进行**对照**：讨论，代码和图表。
-
-面试准备的其他主题：
-
-* [学习指引](#学习指引)
-* [如何处理一个系统设计的面试题](#如何处理一个系统设计的面试题)
-* [系统设计的面试题，**含解答**](#系统设计的面试题和解答)
-* [面向对象设计的面试题，**含解答**](#面向对象设计的面试问题及解答)
-* [其它的系统设计面试题](#其它的系统设计面试题)
-
-## 抽认卡
-
-<p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png">
-  <br/>
-</p>
-
-这里提供的[抽认卡堆](https://apps.ankiweb.net/)使用间隔重复的方法，帮助你记忆关键的系统设计概念。
-
-* [系统设计的卡堆](resources/flash_cards/System%20Design.apkg)
-* [系统设计的练习卡堆](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [面向对象设计的练习卡堆](resources/flash_cards/OO%20Design.apkg)
-
-随时随地都可使用。
-
-### 代码资源：互动式编程挑战
-
-你正在寻找资源以准备[**编程面试**](https://github.com/donnemartin/interactive-coding-challenges)吗？
-
-<p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png">
-  <br/>
-</p>
-
-请查看我们的姐妹仓库[**互动式编程挑战**](https://github.com/donnemartin/interactive-coding-challenges)，其中包含了一个额外的抽认卡堆：
-
-* [代码卡堆](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
-
-## 贡献
-
-> 从社区中学习。
-
-欢迎提交 PR 提供帮助：
-
-* 修复错误
-* 完善章节
-* 添加章节
-
-一些还需要完善的内容放在了[正在完善中](#正在完善中)。
-
-请查看[贡献指南](CONTRIBUTING.md)。
+|                                          | 短期   | 中期   | 长期   |
+| ---------------------------------------- | ---- | ---- | ---- |
+| 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
+| 学习 [如何进行系统设计](#如何进行系统设计)            | :+1: | :+1: | :+1: |
+| 完成 [系统设计实例](#系统设计实例)                   | :+1: | :+1: | :+1: |
+| 完成 [面向对象设计实例](#面向对象设计实例)       | :+1: | :+1: | :+1: |
+| 阅读 [真实架构](#真实架构)             | 一些   | 很多   | 大部分  |
+| 阅读 [公司工程博客](#公司工程博客)的文章        | 一些   | 很多   | 大部分  |
+| 复习 [其它的系统设计实例](#其它的系统设计实例)          | 一些   | 很多   | 大部分  |
 
 ## 系统设计主题的索引
 
 > 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都面临着取舍和权衡**。
 >
 > 每个章节都包含着更多的资源的链接。
-
-
-<p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png">
-  <br/>
-</p>
 
 * [系统设计主题：从这里开始](#系统设计主题从这里开始)
     * [第一步：回顾可扩展性的视频讲座](#第一步回顾可扩展性scalability的视频讲座)
@@ -123,7 +61,7 @@
 * [可用模式](#可用性模式)
     * [故障切换](#故障切换)
     * [复制](#复制)
-* [域名系统](#域名系统)
+* [DNS](#域名系统DNS)
 * [CDN](#内容分发网络cdn)
     * [CDN 推送](#cdn-推送push)
     * [CDN 拉取](#cdn-拉取pull)
@@ -178,202 +116,15 @@
 * [附录](#附录)
     * [2 的次方表](#2-的次方表)
     * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
-    * [其它的系统设计面试题](#其它的系统设计面试题)
-    * [真实架构](#真实架构)
-    * [公司的系统架构](#公司的系统架构)
-    * [公司工程博客](#公司工程博客)
+* [其它的系统设计面试题](#其它的系统设计面试题)
+* [真实架构](#真实架构)
+* [公司的系统架构](#公司的系统架构)
+* [公司工程博客](#公司工程博客)
 * [正在完善中](#正在完善中)
 * [致谢](#致谢)
 * [联系方式](#联系方式)
 * [许可](#许可)
 
-## 学习指引
-
-> 基于你面试的时间线（短、中、长）去复习那些推荐的主题。
-
-![Imgur](http://i.imgur.com/OfVllex.png)
-
-**问：对于面试来说，我需要知道这里的所有知识点吗？**
-
-**答：不，如果只是为了准备面试的话，你并不需要知道所有的知识点。**
-
-在一场面试中你会被问到什么取决于下面这些因素：
-
-* 你的经验
-* 你的技术背景
-* 你面试的职位
-* 你面试的公司
-* 运气
-
-那些有经验的候选人通常会被期望了解更多的系统设计的知识。架构师或者团队负责人则会被期望了解更多除了个人贡献之外的知识。顶级的科技公司通常也会有一次或者更多的系统设计面试。
-
-面试会很宽泛的展开并在几个领域深入。这会帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
-
-* **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
-* **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
-* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来练习。
-
-|                                          | 短期   | 中期   | 长期   |
-| ---------------------------------------- | ---- | ---- | ---- |
-| 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
-| 阅读一些你要面试的[公司工程博客](#公司工程博客)的文章            | :+1: | :+1: | :+1: |
-| 阅读 [真实架构](#真实架构)                   | :+1: | :+1: | :+1: |
-| 复习 [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)       | :+1: | :+1: | :+1: |
-| 完成 [系统设计的面试题和解答](#系统设计的面试题和解答)             | 一些   | 很多   | 大部分  |
-| 完成 [面向对象设计的面试题和解答](#面向对象设计的面试问题及解答)        | 一些   | 很多   | 大部分  |
-| 复习 [其它的系统设计面试题](#其它的系统设计面试题)          | 一些   | 很多   | 大部分  |
-
-## 如何处理一个系统设计的面试题
-
-系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
-
-你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成[系统设计的面试题和解答](#系统设计的面试题和解答)这个章节。
-
-### 第一步：描述使用场景，约束和假设
-
-把所有需要的东西聚集在一起，审视问题。不停的提问，以至于我们可以明确使用场景和约束。讨论假设。
-
-* 谁会使用它？
-* 他们会怎样使用它？
-* 有多少用户？
-* 系统的作用是什么？
-* 系统的输入输出分别是什么？
-* 我们希望处理多少数据？
-* 我们希望每秒钟处理多少请求？
-* 我们希望的读写比率？
-
-### 第二步：创造一个高层级的设计
-
-使用所有重要的组件来描绘出一个高层级的设计。
-
-* 画出主要的组件和连接
-* 证明你的想法
-
-### 第三步：设计核心组件
-
-对每一个核心组件进行详细深入的分析。举例来说，如果你被问到[设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
-
-* 生成并储存一个完整 url 的 hash
-    * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
-    * Hash 碰撞
-    * SQL 还是 NoSQL
-    * 数据库模型
-* 将一个 hashed url 翻译成完整的 url
-    * 数据库查找
-* API 和面向对象设计
-
-### 第四步：扩展设计
-
-确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成扩展性的议题吗？
-
-* 负载均衡
-* 水平扩展
-* 缓存
-* 数据库分片
-
-论述可能的解决办法和代价。每件事情需要取舍。可以使用[可扩展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
-
-### 预估计算量
-
-你或许会被要求通过手算进行一些估算。[附录](#附录)涉及到的是下面的这些资源：
-
-* [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [2 的次方表](#2-的次方表)
-* [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
-
-### 相关资源和延伸阅读
-
-查看下面的链接以获得我们期望的更好的想法：
-
-* [怎样通过一个系统设计的面试](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [系统设计的面试](http://www.hiredintech.com/system-design)
-* [系统架构与设计的面试简介](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-
-## 系统设计的面试题和解答
-
-> 普通的系统设计面试题和相关事例的论述，代码和图表。
->
-
-> 与内容有关的解答在 `solutions/` 文件夹中。
-
-| 问题                                       |                                          |
-| ---------------------------------------- | ---------------------------------------- |
-| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
-| 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
-| 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
-| 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
-| 为一个社交网络设计数据结构                            | [解答](solutions/system_design/social_graph/README.md) |
-| 为搜索引擎设计一个 key-value 储存                   | [解答](solutions/system_design/query_cache/README.md) |
-| 通过分类特性设计 Amazon 的销售排名                    | [解答](solutions/system_design/sales_rank/README.md) |
-| 在 AWS 上设计一个百万用户级别的系统                     | [解答](solutions/system_design/scaling_aws/README.md) |
-| 添加一个系统设计问题                               | [贡献](#贡献)                                |
-
-### 设计 Pastebin.com (或者 Bit.ly)
-
-[查看实践与解答](solutions/system_design/pastebin/README.md)
-
-![Imgur](http://i.imgur.com/4edXG0T.png)
-
-### 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索)
-
-[查看实践与解答](solutions/system_design/twitter/README.md)
-
-![Imgur](http://i.imgur.com/jrUBAF7.png)
-
-### 设计一个网页爬虫
-
-[查看实践与解答](solutions/system_design/web_crawler/README.md)
-
-![Imgur](http://i.imgur.com/bWxPtQA.png)
-
-### 设计 Mint.com
-
-[查看实践与解答](solutions/system_design/mint/README.md)
-
-![Imgur](http://i.imgur.com/V5q57vU.png)
-
-### 为一个社交网络设计数据结构
-
-[查看实践与解答](solutions/system_design/social_graph/README.md)
-
-![Imgur](http://i.imgur.com/cdCv5g7.png)
-
-### 为搜索引擎设计一个 key-value 储存
-
-[查看实践与解答](solutions/system_design/query_cache/README.md)
-
-![Imgur](http://i.imgur.com/4j99mhe.png)
-
-### 设计按类别分类的 Amazon 销售排名
-
-[查看实践与解答](solutions/system_design/sales_rank/README.md)
-
-![Imgur](http://i.imgur.com/MzExP06.png)
-
-### 在 AWS 上设计一个百万用户级别的系统
-
-[查看实践与解答](solutions/system_design/scaling_aws/README.md)
-
-![Imgur](http://i.imgur.com/jj3A5N8.png)
-
-## 面向对象设计的面试问题及解答
-
-> 常见面向对象设计面试问题及实例讨论，代码和图表演示。
->
-> 与内容相关的解决方案在 `solutions/` 文件夹中。
-
->**注：此节还在完善中**
-
-| 问题           |                                          |
-| ------------ | ---------------------------------------- |
-| 设计 hash map  | [解决方案](solutions/object_oriented_design/hash_table/hash_map.ipynb) |
-| 设计 LRU 缓存    | [解决方案](solutions/object_oriented_design/lru_cache/lru_cache.ipynb) |
-| 设计一个呼叫中心     | [解决方案](solutions/object_oriented_design/call_center/call_center.ipynb) |
-| 设计一副牌        | [解决方案](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
-| 设计一个停车场      | [解决方案](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
-| 设计一个聊天服务     | [解决方案](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
-| 设计一个环形数组     | [待解决](#贡献)                     |
-| 添加一个面向对象设计问题 | [待解决](#贡献)                     |
 
 ## 系统设计主题：从这里开始
 
@@ -413,11 +164,11 @@
 
 记住**每个方面都面临取舍和权衡**。
 
-然后，我们将深入更具体的主题，如 DNS、CDN 和负载均衡器。
+然后，我们将深入更具体的主题，如 DNS、CDN和负载均衡器。
 
 ## 性能与可扩展性
 
-如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。通常，提高性能意味着服务于更多的工作单元，另一方面，当数据集增长时，同样也可以处理更大的工作单位。<sup><a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html">1</a></sup>
+如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。通常，提高性能意味着服务于更多的工作单元，另一方面，当数据集增长时，同样也可以处理更大的工作单位。
 
 另一个角度来看待性能与可扩展性:
 
@@ -1610,6 +1361,156 @@ Notes
 * [每个程序员都应该知道的延迟数 — 2](https://gist.github.com/hellerbarde/2843375)
 * [关于建设大型分布式系统的的设计方案、课程和建议](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [关于建设大型可拓展分布式系统的软件工程咨询](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+
+
+## 如何进行系统设计
+
+你可以使用下面的步骤来指引设计。为了巩固这个过程，请使用下面的步骤完成[系统设计实例](#系统设计实例)这个章节。
+
+### 第一步：描述使用场景，约束和假设
+
+把所有需要的东西聚集在一起，审视问题。不停地明确使用场景和约束。讨论假设。
+
+* 谁会使用它？
+* 他们会怎样使用它？
+* 有多少用户？
+* 系统的作用是什么？
+* 系统的输入输出分别是什么？
+* 我们希望处理多少数据？
+* 我们希望每秒钟处理多少请求？
+* 我们希望的读写比率？
+
+### 第二步：创造一个高层级的设计
+
+使用所有重要的组件来描绘出一个高层级的设计。
+
+* 画出主要的组件和连接
+* 证明你的想法
+
+### 第三步：设计核心组件
+
+对每一个核心组件进行详细深入的分析。举例来说，如果[设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
+
+* 生成并储存一个完整 url 的 hash
+    * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
+    * Hash 碰撞
+    * SQL 还是 NoSQL
+    * 数据库模型
+* 将一个 hashed url 翻译成完整的 url
+    * 数据库查找
+* API 和面向对象设计
+
+### 第四步：扩展设计
+
+确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成扩展性的议题吗？
+
+* 负载均衡
+* 水平扩展
+* 缓存
+* 数据库分片
+
+论述可能的解决办法和代价。每件事情需要取舍。可以使用[可扩展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
+
+### 预估计算量
+
+你或许会被要求通过手算进行一些估算。[附录](#附录)涉及到的是下面的这些资源：
+
+* [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [2 的次方表](#2-的次方表)
+* [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
+
+### 相关资源和延伸阅读
+
+查看下面的链接以获得我们期望的更好的想法：
+
+* [系统设计](http://www.hiredintech.com/system-design)
+* [系统架构与设计的简介](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+
+## 系统设计实例
+
+> 普通的系统设计面试题和相关事例的论述，代码和图表。
+>
+
+> 与内容有关的解答在 `solutions/` 文件夹中。
+
+| 问题                                       |                                          |
+| ---------------------------------------- | ---------------------------------------- |
+| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
+| 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
+| 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
+| 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
+| 为一个社交网络设计数据结构                            | [解答](solutions/system_design/social_graph/README.md) |
+| 为搜索引擎设计一个 key-value 储存                   | [解答](solutions/system_design/query_cache/README.md) |
+| 通过分类特性设计 Amazon 的销售排名                    | [解答](solutions/system_design/sales_rank/README.md) |
+| 在 AWS 上设计一个百万用户级别的系统                     | [解答](solutions/system_design/scaling_aws/README.md) |
+
+### 设计 Pastebin.com (或者 Bit.ly)
+
+[查看实践与解答](solutions/system_design/pastebin/README.md)
+
+![Imgur](http://i.imgur.com/4edXG0T.png)
+
+### 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索)
+
+[查看实践与解答](solutions/system_design/twitter/README.md)
+
+![Imgur](http://i.imgur.com/jrUBAF7.png)
+
+### 设计一个网页爬虫
+
+[查看实践与解答](solutions/system_design/web_crawler/README.md)
+
+![Imgur](http://i.imgur.com/bWxPtQA.png)
+
+### 设计 Mint.com
+
+[查看实践与解答](solutions/system_design/mint/README.md)
+
+![Imgur](http://i.imgur.com/V5q57vU.png)
+
+### 为一个社交网络设计数据结构
+
+[查看实践与解答](solutions/system_design/social_graph/README.md)
+
+![Imgur](http://i.imgur.com/cdCv5g7.png)
+
+### 为搜索引擎设计一个 key-value 储存
+
+[查看实践与解答](solutions/system_design/query_cache/README.md)
+
+![Imgur](http://i.imgur.com/4j99mhe.png)
+
+### 设计按类别分类的 Amazon 销售排名
+
+[查看实践与解答](solutions/system_design/sales_rank/README.md)
+
+![Imgur](http://i.imgur.com/MzExP06.png)
+
+### 在 AWS 上设计一个百万用户级别的系统
+
+[查看实践与解答](solutions/system_design/scaling_aws/README.md)
+
+![Imgur](http://i.imgur.com/jj3A5N8.png)
+
+## 面向对象设计实例
+
+> 常见面向对象设计面试问题及实例讨论，代码和图表演示。
+>
+> 与内容相关的解决方案在 `solutions/` 文件夹中。
+
+>**注：此节还在完善中**
+
+| 问题           |                                          |
+| ------------ | ---------------------------------------- |
+| 设计 hash map  | [解决方案](solutions/object_oriented_design/hash_table/hash_map.ipynb) |
+| 设计 LRU 缓存    | [解决方案](solutions/object_oriented_design/lru_cache/lru_cache.ipynb) |
+| 设计一个呼叫中心     | [解决方案](solutions/object_oriented_design/call_center/call_center.ipynb) |
+| 设计一副牌        | [解决方案](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
+| 设计一个停车场      | [解决方案](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
+| 设计一个聊天服务     | [解决方案](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
+| 设计一个环形数组     | [待解决](#贡献)                     |
+| 添加一个面向对象设计问题 | [待解决](#贡献)                     |
+
 
 ### 其它的系统设计面试题
 
