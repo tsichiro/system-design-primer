@@ -139,6 +139,20 @@
     * 负载均衡
     * 数据库复制
     * 数据库分区
+* 导读
+    > horizontal scaling (13:00 - 21:00)
+    > load balancing & caching (21:00 – 29:00)
+    > shared session state (29:00 – 34:00)
+    > RAID (36:00 – 40:00)
+    > shared storage tech (42:00)
+    > database replication (43:00)
+    > load balancing tech (44:00 – 45:00)
+    > session affinity (46:00 – 51:00)
+    > in-memory caching (59:00 – 1:00:00)
+    > data replication – active:passive (1:11:00 - 1:14:00)  active:active (1:16:00 - 1:21:00)
+    > partitioning (1:21:00 – 1:34:00)
+    > data center redundancy (1:33:00 – 1:39:00)
+    > security (1:39:00 – 1:44:00)
 
 ### 第二步：回顾可扩展性文章
 
