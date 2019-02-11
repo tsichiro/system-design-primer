@@ -140,29 +140,34 @@
     * 数据库复制
     * 数据库分区
 * 导读
-    > horizontal scaling (13:00 - 21:00)
-    > load balancing & caching (21:00 – 29:00)
-    > shared session state (29:00 – 34:00)
-    > RAID (36:00 – 40:00)
-    > shared storage tech (42:00)
-    > database replication (43:00)
-    > load balancing tech (44:00 – 45:00)
-    > session affinity (46:00 – 51:00)
-    > in-memory caching (59:00 – 1:00:00)
-    > data replication – active:passive (1:11:00 - 1:14:00)  active:active (1:16:00 - 1:21:00)
-    > partitioning (1:21:00 – 1:34:00)
-    > data center redundancy (1:33:00 – 1:39:00)
-    > security (1:39:00 – 1:44:00)
+    * horizontal scaling (13:00 - 21:00)
+    * load balancing & caching (21:00 – 29:00)
+    * shared session state (29:00 – 34:00)
+    * RAID (36:00 – 40:00)
+    * shared storage tech (42:00)
+    * database replication (43:00)
+    * load balancing tech (44:00 – 45:00)
+    * session affinity (46:00 – 51:00): Shared storage vs Cookies
+    * in-memory caching (59:00 – 1:00:00)
+    * data replication – Master-Slave (1:11:00 - 1:14:00)  Master-Master (1:16:00 - 1:21:00)
+    * partitioning & high availability (1:21:00 – 1:34:00)
+    * data center redundancy (1:33:00 – 1:39:00)
+    * security (1:39:00 – 1:44:00)
 
 ### 第二步：回顾可扩展性文章
 
 [可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
-* 主题涵盖：
+* 主题涵盖
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [数据库](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [缓存](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [异步](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+
+* 导读：
+    * [Clones]
+        1. 每个服务器拥有一模一样的代码库且不在本地硬盘或内存中保存任何和用户相关的数据，比如会话或档案图片。会话应该保存在外部中心化的数据存储区，如数据库或更优性能的持久式缓存（如Redis）。
+        2.  
 
 ### 接下来的步骤
 
@@ -1707,5 +1712,5 @@ Notes
 ## 许可
 
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
-
+    
     http://creativecommons.org/licenses/by/4.0/
