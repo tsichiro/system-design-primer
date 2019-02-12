@@ -133,41 +133,37 @@
 [哈佛大学可扩展性讲座](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
 * 主题涵盖
-    * 垂直扩展（Vertical scaling）
-    * 水平扩展（Horizontal scaling）
-    * 缓存
-    * 负载均衡
-    * 数据库复制
-    * 数据库分区
-* 导读
-    * horizontal scaling (13:00 - 21:00)
-    * load balancing & caching (21:00 – 29:00)
-    * shared session state (29:00 – 34:00)
+    * **水平扩展** (13:00 - 21:00)
+    * **负载均衡 & 缓存** (21:00 – 29:00)
+    * 共享会话状态 (29:00 – 34:00)
     * RAID (36:00 – 40:00)
-    * shared storage tech (42:00)
-    * database replication (43:00)
-    * load balancing tech (44:00 – 45:00)
-    * session affinity (46:00 – 51:00): Shared storage vs Cookies
-    * in-memory caching (59:00 – 1:00:00)
-    * data replication – Master-Slave (1:11:00 - 1:14:00)  Master-Master (1:16:00 - 1:21:00)
-    * partitioning & high availability (1:21:00 – 1:34:00)
-    * data center redundancy (1:33:00 – 1:39:00)
-    * security (1:39:00 – 1:44:00)
+    * 共享存储技术 (42:00)
+    * **负载均衡技术** (44:00 – 45:00)
+    * **会话保持**（session affinity） (46:00 – 51:00): Shared storage vs Cookies
+    * 内存缓存 (59:00 – 1:00:00)
+    * **数据库复制** – Master-Slave (1:11:00 - 1:14:00)  Master-Master (1:16:00 - 1:21:00)
+    * **数据库分区** & 高可用 (1:21:00 – 1:34:00)
+    * 数据中心冗余 (1:33:00 – 1:39:00)
+    * 安全 (1:39:00 – 1:44:00)
 
 ### 第二步：回顾可扩展性文章
 
 [可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
 * 主题涵盖
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [克隆](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+      * 让每个服务器的代码库保持一致，且不在本地硬盘或内存中保存任何和用户相关的数据，比如会话或档案图片。会话应该保存在外部中心化的数据存储区，如数据库或更优性能的持久式缓存（如Redis）。
+      * 创建服务器的镜像文件（比如使用Amazon Machine Image）。
     * [数据库](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+      * 主-从复制、分片、非规范化和SQL调优。
+      * NoSQL。
     * [缓存](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+      * 当应用需要读取数据时，首先应尝试从缓存中检索。
+      * 缓存数据的常见方式有两种：缓存数据库查询（主要有过期的问题）或者缓存对象（更推荐，有逻辑且适于异步）。
     * [异步](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+      * 提前准备而后提供快速的服务。
+      * 任务队列，适于计算耗时的任务。
 
-* 导读：
-    * [Clones]
-        1. 每个服务器拥有一模一样的代码库且不在本地硬盘或内存中保存任何和用户相关的数据，比如会话或档案图片。会话应该保存在外部中心化的数据存储区，如数据库或更优性能的持久式缓存（如Redis）。
-        2.  
 
 ### 接下来的步骤
 
