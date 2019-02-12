@@ -189,7 +189,49 @@
 ### 来源及延伸阅读
 
 * [简单谈谈可扩展性](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+  * 如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。
+  * 如果资源的增加能促进冗余而非丧失性能，永远在线（always-on）的服务就是可扩展的。
+  * 可扩展的难点：不能事后考虑（after-thought）；系统异构。
+* [可扩展性、可用性和稳定性模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+  * **这篇文章其实是本文的构架**
+  * 可扩展性
+    * 常规推荐
+      * 不变性（Immutability）作为默认值
+      * 引用透明（参考FP）
+      * 惰性
+      * 思考你的数据：具体数据具体保证
+    * 模式：状态
+      * HTTP缓存：反向代理、CDN
+        * 生产静态内容：预计算内容
+      * 并发
+        * 状态共享式并发：使用java.util.concurrent.*
+        * 消息传递式并发：Actors
+        * 数据流式并发
+        * 软件事务性缓存
+    * 模式：行为
+      * 事件驱动架构
+        * 领域事件（Domain Events）
+        * 事件溯源（Event Sourcing）
+        * 命令查询职责分离（Command and Query Responsibility Segregation，CQRS）
+        * 事件流处理（Event Stream Processing）
+        * 消息传送（Messaging）
+        * 企业服务总线（Enterprise Service Bus，ESB）
+        * Actors
+        * 企业集成架构（Enterprise Integration Architecture，EIA）
+      * 并行计算
+        * SPMD（Single Program Multiple Data）模式
+        * Master/Worker模式
+        * Loop Parallelism模式
+        * Fork/Join模式
+        * MapReduce模式
+  * 稳定性
+    * 超时（Timeouts）：如果可以，一直使用超时
+    * 断路器（Circuit Breaker）
+    * 让其崩溃（Let-it-crash）
+    * 快速失败（Fail fast）
+    * 隔板（Bulkheads）
+    * 稳态（Steady State）
+    * 限流（Throttling）
 
 ## 延迟与吞吐量
 
@@ -212,14 +254,15 @@
   <br/>
   <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
-
-在一个分布式计算系统中，只能同时满足下列的两点:
+只能同时满足下列的两点:
 
 * **一致性** ─ 每次访问都能获得最新数据但可能会收到错误响应
 * **可用性** ─ 每次访问都能收到非错响应，但不保证获取到最新数据
 * **分区容错性** ─ 在任意分区网络故障的情况下系统仍能继续运行
 
-**网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。**
+中心化的系统（比如RDBMS）没有网络分区，所以拥有一致性和可用性。
+
+**而在一个分布式计算系统中，网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。**
 
 #### CP ─ 一致性和分区容错性
 
@@ -297,8 +340,10 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 这个主题进一步探讨了[数据库](#数据库)部分:
 
-* [主─从复制](#主从复制)
-* [主─主复制](#主主复制)
+* [主─从复制](#主从复制)：Master供读写并复制到Slave，Slave仅供读
+* [主─主复制](#主主复制)：Master之间互相复制，都供读写
+* 树形复制：在主-从复制的基础上，Slave作为Master复制到更多的Slave
+* 伙伴复制：每个节点复制一个其他节点，类似于链或者环的结构
 
 ## 域名系统
 
