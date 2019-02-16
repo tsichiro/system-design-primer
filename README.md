@@ -244,6 +244,7 @@
 ### 来源及延伸阅读
 
 * [理解延迟与吞吐量](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
 
 ## 可用性与一致性
 
@@ -254,35 +255,49 @@
   <br/>
   <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
-只能同时满足下列的两点:
+在一个分布式计算系统中，只能同时满足下列的两点:
 
-* **一致性** ─ 每次访问都能获得最新数据但可能会收到错误响应
-* **可用性** ─ 每次访问都能收到非错响应，但不保证获取到最新数据
-* **分区容错性** ─ 在任意分区网络故障的情况下系统仍能继续运行
+* **一致性** ─ 每次访问都能获得**最新数据**但可能会收到错误响应
+* **可用性** ─ 每次访问都能收到**非错响应**，但不保证获取到最新数据
+* **分区容错性** ─ 在任意分区**网络故障**的情况下系统仍能继续运行
 
-中心化的系统（比如RDBMS）没有网络分区，所以拥有一致性和可用性。
-
-**而在一个分布式计算系统中，网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。**
+中心化的系统（比如RDBMS）没有网络分区，所以拥有一致性和可用性。**而在一个分布式计算系统中，网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。**
 
 #### CP ─ 一致性和分区容错性
 
-等待分区节点的响应可能会导致延时错误。如果你的业务需求需要原子读写，CP 是一个不错的选择。
+等待分区节点的响应可能会导致延时错误。如果你的业务需求需要原子读写，CP 是优于AP的选择。
+
+<p align="center">
+  <img src="http://robertgreiner.com/uploads/images/2014/CAP-CP.png">
+  <br/>  
+</p>
 
 #### AP ─ 可用性与分区容错性
 
-响应节点上可用数据的最近版本可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
+响应节点上可用数据的最近版本，可能并不是最新的。系统当前状态依然能接受写操作，在分区问题解决后进行处理。如果业务需求允许数据同步有一定的灵活性（[最终一致性](#最终一致性)），或当有外部故障时要求系统继续运行，AP 是优于CP的选择。
 
-如果业务需求允许[最终一致性](#最终一致性)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
+<p align="center">
+  <img src="http://robertgreiner.com/uploads/images/2014/CAP-AP-full.png">
+  <br/>  
+</p>
 
 ### 来源及延伸阅读
 
 * [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+  * 在一致性和可用性之间做决定是软件设计的权衡。构建分布式系统的好处很多，但增加复杂性。明白网络故障是生活的日常，并选择对的方案才能完成应用。
 * [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+  * Chapter 1: “Remembrance Inc” Your new venture 
+  * Chapter 2 : You scale up
+  * Chapter 3 : You have your first “Bad Service”  - Not Consistent
+  * Chapter 4: You fix the Consistency problem - Sync
+  * Chapter 5: You come up with the greatest solution Ever - CA
+  * Chapter 6: Your wife gets angry - Not Partition Tolerent
+  * Bonus : Eventual Consistency with a run around clerk
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一致性模式
 
-有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 理论](#cap-理论)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
+有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 理论](#cap-理论)中的一致性定义 ─ 每次访问都能获得**最新数据**但可能会收到错误响应
 
 
 ### 弱一致性
@@ -306,6 +321,47 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ### 来源及延伸阅读
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+
+  * 一致性
+
+  * 为什么需要事务（transactions）？
+
+    * 正确性（Correctness）
+    * 一致性
+    * 加强不变量（Enforce invariants）
+    * ACID
+
+  * 为什么需要跨数据中心？
+
+    * 灾难性故障
+    * 预期故障
+    * 日常维护
+    * 地理局部性（Geolocality）：CDNs，边缘缓存
+
+  * 多宿主（Multihoming）
+
+    * 多数据中心同时写，但代价是延迟
+
+  * 技巧和权衡
+
+    * 备份（Backups）
+    * 主-从复制（M/S)
+    * 主-主复制（M/M)
+    * 两阶段提交（Two Phase Commit）
+    * Paxos
+
+  * 总结
+
+    <p align="center">
+      <img src="http://ww4.sinaimg.cn/mw690/81b78497jw1ej3xmerc23j20ss0cstd8.jpg">
+      <br/>  
+    </p>
+
+  * 拓展阅读
+
+    * [ ] [Distributed systems](https://github.com/mixu/distsysbook)
+    * [ ] [NOSQL Patterns](horicky.blogspot.com/2009/11/nosql-patterns.html)
+
 
 ## 可用性模式
 
@@ -364,7 +420,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 [CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 等平台提供管理 DNS 的功能。某些 DNS 服务通过集中方式来路由流量:
 
-* [加权轮询调度](http://g33kinfo.com/info/archives/2657)
+* [加权轮询调度](http://g33kinfo.com/info/archives/2657)：分配权重
     * 防止流量进入维护中的服务器
     * 在不同大小集群间负载均衡
     * A/B 测试
@@ -386,10 +442,11 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ## 内容分发网络（CDN）
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg">
+  <img src="https://howtogetonline.com/images/how-a-cdn-works.jpg">
   <br/>
-  <strong><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">来源：为什么使用 CDN</a></strong>
+  <strong><a href="https://howtogetonline.com/a-guide-to-content-delivery-networks.php">来源：为什么使用 CDN</a></strong>
 </p>
+
 
 内容分发网络（CDN）是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
 
@@ -398,17 +455,17 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 * 从靠近用户的数据中心提供资源
 * 通过 CDN 你的服务器不必真的处理请求
 
-### CDN 推送（push）
+### 推送式（push） CDN
 
 当你服务器上内容发生变动时，推送 CDN 接受新内容。直接推送给 CDN 并重写 URL 地址以指向你的内容的 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，流量最小化，但储存最大化。
 
-### CDN 拉取（pull）
+### 拉取式（pull） CDN
 
-CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。直到内容被缓存在 CDN 上为止，这样请求只会更慢，
+拉取式 CDN 是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。直到内容被缓存在 CDN 上为止，造成更慢的请求。
 
-[存活时间（TTL）](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。CDN 拉取方式最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
+[存活时间（TTL）](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。拉取式 CDN 最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
 
-高流量站点使用 CDN 拉取效果不错，因为只有最近请求的内容保存在 CDN 中，流量才能更平衡地分散。
+高流量站点使用拉取式 CDN 效果不错，因为只有最近请求的内容保存在 CDN 中，流量才能更平衡地分散。
 
 ### 缺陷：CDN
 
@@ -418,8 +475,9 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 来源及延伸阅读
 
-* [全球性内容分发网络](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
-* [CDN 拉取和 CDN 推送的区别](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [全球性内容分发网络](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
+* [拉取式CDN和推送式 CDN 的区别](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+  * 选择 CDN 类型主要取决于流量和下载。比如旅行博客的下载量大，长期而言会发现推送式 CDN 推送会更便宜和高效，这是由于只有在你主动推送资源到这样的 CDN 上之后，它们才会重新下载。拉取式的 CDN 通过将最流行的内容保留在 CDN 服务器上，有助于高流量低下载式（high-traffic-small-download）的站点。后续内容的更新（或者“拉取”）不会因过于频繁而导致成本超过推送式 CDN。
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
 ## 负载均衡器
@@ -490,6 +548,8 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [七层负载平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB 监听器配置](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [可扩展的系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+  * [ ] 
 
 ## 反向代理（web 服务器）
 
