@@ -446,8 +446,6 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
   <br/>
   <strong><a href="https://howtogetonline.com/a-guide-to-content-delivery-networks.php">来源：为什么使用 CDN</a></strong>
 </p>
-
-
 内容分发网络（CDN）是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
 
 将内容存储在 CDN 上可以从两个方面来提供性能:
@@ -550,11 +548,18 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
       <br/>
     </p>
 
-  * NGINX进程模型：master进程、worker和helper进程。
+  * [NGINX性能调优](https://www.nginx.com/blog/tuning-nginx/)
+
+  * [ ] [NGINX官方架构](http://www.aosabook.org/en/nginx.html)
+
+    <p align="center">
+      <img src="http://www.aosabook.org/images/nginx/architecture.png">
+      <br/>
+    </p>
 
 * [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 
-* [可扩展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [可扩展性-克隆](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 
@@ -577,17 +582,18 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 带来的好处包括：
 
-- **增加安全性** - 隐藏后端服务器的信息，屏蔽黑名单中的 IP，限制每个客户端的连接数。
+- **增加安全性** - 隐藏后端服务器的信息，防止DDos攻击（屏蔽黑名单中的 IP，限制每个客户端的连接数）。
 - **提高可扩展性和灵活性** - 客户端只能看到反向代理服务器的 IP，这使你可以增减服务器或者修改它们的配置。
-- **本地终结 SSL 会话** - 解密传入请求，加密服务器响应，这样后端服务器就不必完成这些潜在的高成本的操作。
-  - 免除了在每个服务器上安装 [X.509](https://en.wikipedia.org/wiki/X.509) 证书的需要
-- **压缩** - 压缩服务器响应
-- **缓存** - 直接返回命中的缓存结果
-- **静态内容** - 直接提供静态内容
-  - HTML/CSS/JS
-  - 图片
-  - 视频
-  - 等等
+- **web加速**
+  - **压缩** - 压缩服务器响应
+  - **本地终结 SSL 会话** - 解密传入请求，加密服务器响应，这样后端服务器就不必完成这些潜在的高成本的操作。
+    - 免除了在每个服务器上安装 [X.509](https://en.wikipedia.org/wiki/X.509) 证书的需要
+  - **缓存** - 直接返回命中的缓存结果
+  - **静态内容** - 直接提供静态内容
+    - HTML/CSS/JS
+    - 图片
+    - 视频
+    - 等等
 
 ### 负载均衡器与反向代理
 
@@ -604,8 +610,6 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 
 - [反向代理与负载均衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-- [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-- [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 - [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
 ## 应用层
@@ -641,10 +645,11 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ### 来源及延伸阅读
 
 - [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
-- [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+- [ ] [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 - [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-- [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-- [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+- [ ] [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+  - Zookeeper通过由数据寄存器构成共享的层级命名空间让分布式的进程彼此协调。
+- [ ] [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
 ## 数据库
 
@@ -653,6 +658,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
   <br/>
   <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
+
 
 ### 关系型数据库管理系统（RDBMS）
 
