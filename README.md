@@ -498,7 +498,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 增加的好处包括:
 
 * **SSL 终结** ─ 解密传入的请求并加密服务器响应，这样的话后端服务器就不必再执行这些潜在高消耗运算了。
-    * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
+    * 不需要在每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
 * **Session 留存** ─ 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
 
 通常会设置采用[工作─备用](#工作到备用切换active-passive) 或 [双工作](#双工作切换active-active) 模式的多个负载均衡器，以免发生故障。
@@ -529,7 +529,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 #### 缺陷：水平扩展
 
 * 水平扩展引入了复杂度并涉及服务器复制
-    * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
+    * 服务器应该是**无状态**的:它们也不该包含像 session 或资料图片等与用户关联的数据。
     * session 可以集中存储在数据库或持久化[缓存](#缓存)（Redis、Memcached）的数据存储区中。
 * 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
@@ -542,14 +542,27 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ### 来源及延伸阅读
 
 * [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+
+  * NGINX能够脱颖而出，在于其精致的事件驱动架构，让其能够在现代硬件上扩展到十万级别的并发连接。
+
+    <p align="center">
+      <img src="https://www.nginx.com/wp-content/uploads/2015/04/nginx_architecture_thumbnail.png">
+      <br/>
+    </p>
+
+  * NGINX进程模型：master进程、worker和helper进程。
+
 * [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+
 * [可扩展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+
 * [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+
 * [七层负载平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+
 * [ELB 监听器配置](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
-* [可扩展的系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-  * [ ] 
 
 ## 反向代理（web 服务器）
 
