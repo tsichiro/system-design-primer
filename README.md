@@ -743,7 +743,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 ##### 来源及延伸阅读：联合
 
-- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=w95murBkYmU)
+- [ ] [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=Ma3xWDXTxRg)
 
 #### 分片
 
@@ -769,9 +769,9 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 #### 来源及延伸阅读：分片
 
-- [分片时代来临](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-- [数据库分片架构](https://en.wikipedia.org/wiki/Shard_(database_architecture))
-- [一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+- [ ] [分片时代来临](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+- [ ] [数据库分片架构](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+- [ ] [一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
 #### 非规范化
 
@@ -836,14 +836,14 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 
 ##### 来源及延伸阅读
 
-- [MySQL 查询优化小贴士](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-- [为什么 VARCHAR(255) 很常见？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-- [Null 值是如何影响数据库性能的？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-- [慢查询日志](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+- [ ] [MySQL 查询优化小贴士](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
+- [ ] [为什么 VARCHAR(255) 很常见？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+- [ ] [Null 值是如何影响数据库性能的？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+- [ ] [慢查询日志](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 ### NoSQL
 
-NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#最终一致性)。
+NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致性](#最终一致性)。
 
 **BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 理论](#cap-理论)，BASE 强调可用性超过一致性。
 
@@ -866,9 +866,9 @@ NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或*
 #### 来源及延伸阅读
 
 - [键-值数据库](https://en.wikipedia.org/wiki/Key-value_database)
-- [键-值存储的劣势](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-- [Redis 架构](http://qnimate.com/overview-of-redis-architecture/)
-- [Memcached 架构](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+- [ ] [键-值存储的劣势](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+- [ ] [Redis 架构](http://qnimate.com/overview-of-redis-architecture/)
+- [ ] [Memcached 架构](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### 文档类型存储
 
@@ -885,9 +885,9 @@ MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的�
 #### 来源及延伸阅读：文档类型存储
 
 - [面向文档的数据库](https://en.wikipedia.org/wiki/Document-oriented_database)
-- [MongoDB 架构](https://www.mongodb.com/mongodb-architecture)
-- [CouchDB 架构](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-- [Elasticsearch 架构](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+- [ ] [MongoDB 架构](https://www.mongodb.com/mongodb-architecture)
+- [ ] [CouchDB 架构](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+- [ ] [Elasticsearch 架构](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
 #### 列型存储
 
@@ -907,10 +907,10 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ##### 来源及延伸阅读：列型存储
 
-- [SQL 与 NoSQL 简史](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-- [BigTable 架构](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-- [Hbase 架构](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
-- [Cassandra 架构](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
+- [ ] [SQL 与 NoSQL 简史](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+- [ ] [BigTable 架构](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+- [ ] [Hbase 架构](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+- [ ] [Cassandra 架构](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
 #### 图数据库
 
@@ -933,11 +933,11 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 #### 来源及延伸阅读：NoSQL
 
-- [数据库术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-- [NoSQL 数据库 - 调查及决策指南](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+- [ ] [数据库术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+- [ ] [NoSQL 数据库 - 调查及决策指南](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
 - [可扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-- [NoSQL 介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-- [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+- [ ] [NoSQL 介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+- [ ] [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 ### SQL 还是 NoSQL
 
@@ -978,6 +978,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ##### 来源及延伸阅读：SQL 或 NoSQL
 
+- 从 RDBMS 转换到 NoSQL
 - [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=w95murBkYmU)
 - [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 ## 缓存
@@ -1248,7 +1249,7 @@ HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议�
 
 #### 来源及延伸阅读：HTTP
 
-* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)    +
+* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 * [HTTP 是什么？](https://www.nginx.com/resources/glossary/http/)
 * [HTTP 和 TCP 的区别](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 * [PUT 和 PATCH的区别](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
