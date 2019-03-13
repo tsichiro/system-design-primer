@@ -744,6 +744,51 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ##### 来源及延伸阅读：联合
 
 - [ ] [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=Ma3xWDXTxRg)
+  * 用户数 > 1
+    * 从SQL数据库起步
+    * Amazon Cognito处理auth和identity
+  * 用户数 > 一千
+    * 负载均衡
+  * 用户数 > 一万
+    * 横向扩展
+    * 数据库复制
+    * 转移负载：CDN、缓存、NoSQL
+    * 自动伸缩
+  * 用户数 > 50万
+    * 基础设施自动化
+    * 监控
+    * SOA
+    * Serverless
+    * Event-driven compute
+  * 用户数 > 100万
+    * Multi-AZ
+    * Elastic Load Balancing between tiers
+    * Auto Scaling
+    * Service oriented architecture (SOA)
+    * Serving content smartly (Amazon S3/CloudFront)
+    * Caching off DB
+    * Moving state off tiers that auto scale 
+  * 用户数 > 500万-1000万
+    * 数据库问题的解决方案（[联合](#联合)、[分片](#分片)、[NoSQL](NoSQL))
+  * 总结
+    * Multi-AZ your infrastructure
+    * Make use of self-scaling services—Application Load Balancer, Amazon S3, AWS Lambda, Amazon SNS, Amazon SQS, AWS Step Functions, and others
+    * Build in redundancy at every level
+    * Start with SQL. Seriously
+    * Cache data both inside and outside your infrastructure
+    * Use automation tools in your infrastructure 
+    * Make sure you have good metrics/monitoring/logging
+    * Split tiers into individual services (SOA)
+    * Use Auto Scaling once you’re ready for it
+    * Don’t reinvent the wheel
+    * Move to NoSQL if and when it makes sense 
+  * 用户数 > 1000万
+    * More fine-tuning of your application
+    * More SOA of features/functionality
+    * Going from multi-AZ to multi-region
+    * Possibly start to build custom solutions
+    * Deep analysis of your entire stack
+    * Build serverless whenever possible 
 
 #### 分片
 
